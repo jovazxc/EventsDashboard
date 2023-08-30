@@ -64,12 +64,12 @@ function EditEventModal({event, showEdit, ...props}: EditEventModalProps) {
     return (
         <div className="bg-[#000000AA] w-full h-full top-0 absolute z-50 flex justify-center items-center">
             <div className="bg-white container min-h-[50%] w-1/2 p-4 rounded flex flex-col justify-between">
-                    <div className="flex flex-col">
-                    
-                        <span className="text-lg font-bold">
-                        {showEdit ? "Editing" : "Details of"} {event.name}
-                        </span>
 
+                <span className="text-lg font-bold">
+                    {showEdit ? "Editing" : "Details of"} {event.name}
+                </span>
+                <img src={imgSrc} className="w-full"/>
+                    <div className="flex flex-col">
                         <div className="flex flex-col space-y-4">
 
                             <div>
