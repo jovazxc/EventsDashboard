@@ -17,36 +17,24 @@ interface EventTileProps {
 
 function EventTile(props: EventTileProps) {
 
-    const badgeColor = props.private ? 'red' : 'blue'
-    const badgeText = props.private ? 'Private' : 'Public'
-
-
     return (
-      <div className="flex p-2 bg-white rounded flex-col" >
-        <div className='flex flex-1 justify-between items-center'>
-        <Badge color={badgeColor}>{badgeText}</Badge>
-          <span>
-            
-            {props.name}
-          </span>
+      <div style={{flex: '0 0 30%'}} className="w-[500px] flex-grow-0 bg-palette1 rounded-md flex-col" >
+        <img src={props.imgSrc} className="h-36 cursor-pointer rounded-t-md" onClick={props.onClickEvent}></img>
 
-          <div className="flex space-x-1 flex-row items-center">
+        <div className="p-2 ">
+          <div className="flex justify-between">
+            <span className="text-white">{props.private ? "Private" : "Public"} event</span>
             { props.showEdit && <Button 
-              color='blue'
-              onClick={props.onClickEdit}
-              >
-                Edit
-              </Button>
-            }
-            
+                color='blue'
+                onClick={props.onClickEdit}
+                >
+                  Edit
+                </Button>
+              }
           </div>
+          <span className="text-palette3">{props.name}</span>
         </div>
-  
-        <div className='flex flex-1 items-center gap-x-6 mt-2 flex-col '>
-          <img src={props.imgSrc} className="w-full h-24 cursor-pointer" onClick={props.onClickEvent}></img>
 
-          {props.date}
-        </div>
       </div>
     )
 }
